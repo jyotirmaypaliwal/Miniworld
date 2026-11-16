@@ -86,7 +86,7 @@ class TMaze(MiniWorldEnv, utils.EzPickle):
             reward += self._reward()
             termination = True
 
-        info["goal_pos"] = self.box.pos
+        info["goal_pos"] = self.box.pos.copy()
 
         return obs, reward, termination, truncation, info
 
